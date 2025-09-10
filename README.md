@@ -254,7 +254,38 @@ return 0;
 ---
 
 
+## Assignment 8: Sum of Digits of a 3-Digit Number  
 
+### Problem Statement  
+Take a 3-digit number from the user and print the sum of its digits. 
+
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 3-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Extract the most significant digit using integer division by 100.  
+6. Extract the middle digit using `(number % 100) / 10`.  
+7. Extract the least significant digit using `(number % 100) % 10`.  
+8. Add the three digits to get the sum.  
+9. Print the entered number and the sum of its digits. 
+10. End the program.
+    
+### Code  
+```
+#include <stdio.h>
+int main()
+{
+int num;
+printf("enter a number");
+scanf("%d", &num);
+printf("entered number is %d", num);
+int sum = (num / 100) + (num % 100) / 10 + (num % 100) % 10;
+printf(" sum is : %d ", sum);
+return 0;
+}
+```
+---
 
 ## Assignment 8: Sum of Digits of Any Number  
 
@@ -292,6 +323,103 @@ return 0;
 }
 ```
 ---
+## Assignment 9: Reverse Digits of a 2-Digit Number  
 
+### Problem Statement  
+Take a 2-digit number from the user and print the reverse of its digits.  
 
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 2-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Extract the most significant digit (MSB) using division by 10.  
+6. Extract the least significant digit (LSB) using modulus `% 10`.  
+7. Form the reversed number as `LSB * 10 + MSB`.  
+8. Print the entered number and the reversed number.  
+9. End the program.
+    
+### Code  
+```
+#include <stdio.h>
+int main()
+{
+int num;
+printf("enter a 2 digit number");
+scanf("%d", &num);
+printf("entered number is %d", num);
+int rev = (num / 10) + (num % 10) * 10;
+printf(" reverse is : %d ", rev);
+return 0;
+}
+```
+---
+## Assignment 10: Reverse Digits of a 3-Digit Number  
+
+### Problem Statement  
+Take a 3-digit number from the user and print the reverse of its digits.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 3-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Extract the most significant digit (MSB) using division by 100.  
+6. Extract the middle digit using `(number % 100) / 10`.  
+7. Extract the least significant digit (LSB) using `(number % 100) % 10`.  
+8. Form the reversed number as `LSB * 100 + Middle * 10 + MSB`.  
+9. Print the entered number and the reversed number.  
+10. End the program.
+    
+### Code  
+```
+#include <stdio.h>
+int main()
+{
+int num;
+printf("enter a number");
+scanf("%d", &num);
+printf("entered number is %d", num);
+int rev = (num / 100) + ((num % 100) / 10) * 10 + ((num % 100) % 10) * 100;
+printf(" rev is : %d ", rev);
+return 0;
+}
+```
+---
+
+## Assignment 11: Reverse the 2 MSB Digits of a 4-Digit Number 
+
+### Problem Statement  
+Take a 4-digit number from the user and print the result of reversing the two most significant digits.  
+
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 4-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Extract the most significant digit (msb) by dividing by 1000.  
+6. Extract the 2nd digit (middlem) using `(number % 1000) / 100`.  
+7. Extract the last two digits (middlm) using `(number % 1000) % 100`.  
+8. Reverse the positions of the msb and middlem, and reconstruct the number as `middlem * 1000 + msb * 100 + middlm`.  
+9. Print the entered number and the new number with reversed MSB digits.  
+10. End the program.
+     
+### Code  
+```
+#include <stdio.h>
+int main()
+{
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("entered number is %d", num);
+int msb = num / 1000;
+int middlem = (num % 1000) / 100;
+int middlm = (num % 1000) % 100;
+int rev = middlem * 1000 + msb * 100 + middlm;
+printf(" rev is : %d ", rev);
+return 0;
+}
+```
+---
 
