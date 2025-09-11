@@ -539,3 +539,316 @@ Multiply all digits of the input number and print the result.
 Reverse the digits of any n-digit number:
 Print the reverse of an integer input by the user (not just two/three/four digits, but for any length number).
 ```
+---
+
+# C Programming Loops: Theory and Assignments
+
+## What are Loops in C?
+Loops in C programming allow the repeated execution of a block of code as long as a specified condition is true. This helps avoid repetitive code and makes programs more efficient and readable.
+
+---
+
+## Types of Loops in C
+There are three types of loops:
+
+1. **for Loop**  
+2. **while Loop**  
+3. **do-while Loop**
+
+---
+
+## for Loop
+The `for` loop is an **entry-controlled** loop, meaning the condition is checked before each iteration. It consists of three main parts: initialization, condition, and update statement.
+
+### Syntax
+```
+for (initialization; condition; update) {
+// Code to execute
+}
+```
+
+
+---
+
+## while Loop
+The `while` loop is also an entry-controlled loop. The condition is checked before the execution of the loop body. The loop continues as long as the condition is true.
+
+### Syntax
+```
+while (condition) {
+// Code to execute
+}
+```
+---
+
+## do-while Loop
+The `do-while` loop is a **post-controlled** loop. The loop body is executed at least once before the condition is checked.
+
+### Syntax
+```
+do {
+// Code to execute
+} while (condition);
+```
+---
+
+
+## Assignment 1: Print Numbers from 1 to N using goto Loop  
+
+### Problem Statement  
+Take a number `N` from the user and print numbers from 1 up to `N` using a loop structure.  
+
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num;
+int i = 0;
+printf("enter a number: ");
+scanf("%d", &num);
+loop : if( i < num ){
+i++;
+printf("%d", i);
+goto loop;
+}
+return 0;
+}
+```
+
+---
+
+## Assignment 2: Print Numbers from N down to 1 using goto Loop  
+
+### Problem Statement  
+Take a number `N` from the user and print numbers from `N` down to 1 using a loop structure.  
+
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num;
+int i = 0;
+printf("enter a number: ");
+scanf("%d", &num);
+loop : if(i < num){
+printf("%d \n", num);
+num--;
+goto loop;
+}
+return 0;
+}
+```
+
+---
+
+## Assignment 3: Sum Numbers from 0 to N Using For Loop  
+
+### Problem Statement  
+Calculate the sum of all integers from 0 up to a given number `N` using a `for` loop. 
+
+### Code 
+```
+#include<stdio.h>
+int main(){
+int num = 5;
+int i, sum = 0;
+for(i = 0; i <= num; i++){
+sum += i;
+}
+printf("%d", sum);
+return 0;
+}
+```
+---
+
+## Assignment 4: Sum Numbers from N down to 0 Using For Loop  
+
+### Problem Statement  
+Calculate the sum of all integers from `N` down to 0 using a `for` loop.  
+
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num = 6;
+int i, sum = 0;
+for(i = num; i >= 0; i--){
+sum += i;
+}
+printf("%d", sum);
+return 0;
+}
+```
+---
+
+## Assignment 5: Print Odd Numbers from N down to 1  
+
+### Problem Statement  
+Print all odd numbers from the entered number `N` down to 1.  
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num = 9;
+int i;
+for(i = num; i > 0; i -= 2){
+printf("%d \n", i);
+}
+return 0;
+}
+```
+---
+
+## Assignment 6: Print Numbers in Given Range with Step 2 Using For Loop
+
+### Problem Statement  
+Take two numbers `i` and `j` from the user representing the range and print numbers from `i` to `j` (exclusive) incrementing by 2.  
+
+### Code  
+```
+#include<stdio.h>
+int main(){
+int i, j, k;
+printf("enter the range : ");
+scanf("%d %d", &i, &j);
+for(k = i; k < j; k += 2){
+printf("%d \n", k);
+}
+return 0;
+}
+```
+---
+
+## Assignment 7: Print Odd Numbers Whose Sum of Digits Equals a Given Number  
+
+### Problem Statement  
+
+Given a number `num`, print all odd numbers between 0 and 999 whose digits sum up to `num`.  
+
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num, i;
+printf("enter a number: ");
+scanf("%d", &num);
+for(i = 0; i < 999 ; i++){
+int msb = i / 100;
+int middle = (i % 100) / 10;
+int lsb = i % 10;
+if(msb + middle + lsb == num && i % 2 != 0){
+printf("%d \n", i);
+}
+}
+return 0;
+}
+```
+---
+
+## Assignment 8: Print Even Numbers Whose Sum of Digits Equals a Given Number  
+
+### Problem Statement  
+Given a number `num`, print all even numbers between 0 and 999 whose digits sum up to `num`.  
+
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num, i;
+printf("enter a number: ");
+scanf("%d", &num);
+for(i = 0; i < 999 ; i += 2){
+int msb = i / 100;
+int middle = (i % 100) / 10;
+int lsb = i % 10;
+if(msb + middle + lsb == num){
+printf("%d \n", i);
+}
+}
+return 0;
+}
+```
+---
+
+## Assignment 9: Count Number of Digits in a Number  
+
+### Problem Statement  
+Take a number from the user and count how many digits it contains, including large and negative numbers.  
+
+### Code  
+```
+#include <stdio.h>
+int main() {
+long long num;
+int count = 0;
+printf("Enter a number: ");
+scanf("%lld", &num);
+if (num == 0) {
+count = 1;
+} else {
+if (num < 0) {
+num = -num;
+}
+while (num != 0) {
+num = num / 10;
+count++;
+}
+}
+printf("The number has %d digits.\n", count);
+return 0;
+}
+
+```
+---
+
+## Assignment 10: Count and Sum Digits of a Number  
+
+### Problem Statement  
+Take a number from the user, count its digits and calculate the sum of the digits.  
+
+### Solution Approach  
+1. Start the program.  
+2. Declare `long long` variables `num` and `temp` to handle large numbers.  
+3. Declare integer variables `count` initialized to 0 for counting digits, `sum` initialized to 0 for summing digits, and `digit` to hold individual digits.  
+4. Prompt the user to enter a number and read it using `scanf`.  
+5. Handle the special case where the number is 0: print 1 digit and sum 0, then terminate.  
+6. If the number is negative, convert it to positive for digit processing.  
+7. Copy the input number into `temp` to preserve the original.  
+8. Use a `while` loop to count digits by dividing `temp` by 10 until it becomes 0, incrementing `count` at each step.  
+9. Reset `temp` to the original number for summing digits.  
+10. Use another `while` loop to extract each digit using modulo 10, add it to `sum`, and then divide `temp` by 10 until it becomes 0.  
+11. Print the total digit count and sum of digits.  
+12. End the program.
+    
+### Code  
+```
+#include <stdio.h>
+int main() {
+long long num, temp;
+int count = 0, sum = 0, digit;
+printf("Enter a number: ");
+scanf("%lld", &num);
+if (num == 0) {
+printf("Number of digits = 1\nSum of digits = 0\n");
+return 0;
+}
+if (num < 0) {
+num = -num;
+}
+temp = num;
+while (temp != 0) {
+temp = temp / 10;
+count++;
+}
+temp = num;
+while (temp > 0) {
+digit = temp % 10;
+sum = sum + digit;
+temp = temp / 10;
+}
+printf("Number of digits = %d\n", count);
+printf("Sum of digits = %d\n", sum);
+return 0;
+}
+```
+---
