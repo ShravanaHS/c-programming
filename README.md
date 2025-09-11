@@ -1,5 +1,5 @@
 # c-programming
-This repository contains simple to advanced C programming assignments. Thanks to Code with Harry and Etalvis, from whose tutorials I have learned the most. In this repository, I take problem statements and solve them, starting from simple code and gradually progressing to more complex solutions. This is a collection of my learning journey and practice to improve my C programming skills.
+This repository contains simple to advanced C programming assignments. Thanks to [Code with Harry](https://youtu.be/aZb0iu4uGwA?si=Gqp6tP4bWkd4YBej) and [Etalvis](https://learn.etalvis.com/), from whose tutorials I have learned the most. In this repository, I take problem statements and solve them, starting from simple code and gradually progressing to more complex solutions. This is a collection of my learning journey and practice to improve my C programming skills.
 
 ## Assignment 1: Add 2 to a Number
 ### Problem Statement
