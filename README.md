@@ -422,4 +422,120 @@ return 0;
 }
 ```
 ---
+## Assignment 12: Check in 2-Digit Number if the Digits are Equal
 
+### Problem Statement  
+Take a 2-digit number from the user and print `1` if both digits are equal, otherwise print `0`.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 2-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Print the entered number.  
+6. Extract the most significant digit (msb) using integer division by 10.  
+7. Extract the least significant digit (lsb) using modulus `% 10`.  
+8. Use the ternary operator to compare `msb` and `lsb`:  
+   - Print `1` if they are equal.  
+   - Print `0` if they are not equal.  
+9. End the program.
+    
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("your entered number is %d \n", num);
+int msb = num / 10;
+int lsb = num % 10;
+msb == lsb ? printf("1") : printf("0");
+return 0;
+}
+```
+---
+
+## Assignment 13: Check Equality of 4,3 Digits with 2,1 Digits in 4-Digit Number  
+
+### Problem Statement  
+Get a 4-digit number from the user and print `1` if the number formed by the 4th and 3rd digits is equal to the number formed by the 2nd and 1st digits, otherwise print `0`.  
+
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 4-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Print the entered number.  
+6. Extract the 4th digit (`b4`) by dividing by 1000.  
+7. Extract the 3rd digit (`b3`) by taking the remainder after dividing by 1000, then dividing by 100.  
+8. Extract the 2nd digit (`b2`) by taking the remainder after dividing by 100, then dividing by 10.  
+9. Extract the 1st digit (`b1`) by taking the remainder after dividing by 10.  
+10. Form two numbers: one from 4th and 3rd digits (`b4*10 + b3`), one from 2nd and 1st digits (`b2*10 + b1`).  
+11. Use the ternary operator to check if the two numbers are equal:  
+    - Print `1` if equal, `0` if not.  
+12. End the program.
+    
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("your entered number is %d \n", num);
+int b4 = num / 1000;
+int b3 = (num % 1000) / 100;
+int b2 = ((num % 100) / 10);
+int b1 = num % 10;
+(b4 * 10 + b3) == (b2 * 10 + b1) ? printf("1") : printf("0");
+return 0;
+}
+```
+---
+
+## Assignment 14: Check If 4-Digit Number is Greater Than or Equal to 50  
+
+### Problem Statement  
+Get a 4-digit number from the user and print `"success"` if the number is greater than or equal to 50, otherwise print `"failure"`.  
+
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt the user to enter a 4-digit number.  
+4. Read the number using `scanf` with `%d`.  
+5. Print the entered number.  
+6. Use the ternary operator to check if the number is greater than or equal to 50:  
+   - If true, print `"success"`.  
+   - If false, print `"failure"`.  
+7. End the program.
+   
+### Code  
+```
+#include<stdio.h>
+int main(){
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("your entered number is %d \n",num);
+num >= 50 ? printf("success") : printf("failure");
+return 0;
+}
+```
+---
+```
+Check if a number is a palindrome:
+Get any integer from user and determine if the number reads the same forward and backward.
+Find the sum of the first and last digits of a number:
+Get a number from the user and add the first digit (MSB) and the last digit (LSB) together.
+Swap first and last digits of a number
+Take a multi-digit number and print the number after swapping the first and last digits.
+Print digits of a number in words
+Get a number and print each digit as a word, e.g., 145 → "One Four Five".
+Check if a number is an Armstrong number:
+For a 3-digit number, print "Yes" if sum of cubes of its digits equals the number, else print "No".
+Find the product of digits of a given number:
+Multiply all digits of the input number and print the result.
+Reverse the digits of any n-digit number:
+Print the reverse of an integer input by the user (not just two/three/four digits, but for any length number).
+```
