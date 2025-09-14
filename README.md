@@ -853,3 +853,716 @@ return 0;
 }
 ```
 ---
+
+## Assignment 11: Reverse the 2 MSB Digits of a 4-Digit Number  
+### Problem Statement  
+Take a 4-digit number from the user and print the result of reversing the two most significant digits.  
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 4-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Extract the most significant digit (msb) by dividing by 1000.  
+6. Extract the 2nd digit (middlem) using `(number % 1000) / 100`.  
+7. Extract the last two digits (middlm) using `(number % 1000) % 100`.  
+8. Reverse the positions of the msb and middlem, and reconstruct the number as `middlem * 1000 + msb * 100 + middlm`.  
+9. Print the entered number and the new number with reversed MSB digits.  
+10. End the program.  
+### Code  
+#include <stdio.h>
+int main()
+{
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("entered number is %d", num);
+int msb = num / 1000;
+int middlem = (num % 1000) / 100;
+int middlm = (num % 1000) % 100;
+int rev = middlem * 1000 + msb * 100 + middlm;
+printf(" rev is : %d ", rev);
+return 0;
+}
+
+text
+---
+
+## Assignment 12: Check if Digits of 2-Digit Number are Equal  
+### Problem Statement  
+Take a 2-digit number from the user and print `1` if both digits are equal, otherwise print `0`.  
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 2-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Print the entered number.  
+6. Extract the most significant digit (msb) using integer division by 10.  
+7. Extract the least significant digit (lsb) using modulus `% 10`.  
+8. Use the ternary operator to compare `msb` and `lsb`:  
+   - Print `1` if they are equal.  
+   - Print `0` if they are not equal.  
+9. End the program.  
+### Code  
+#include<stdio.h>
+int main(){
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("your entered number is %d \n", num);
+int msb = num / 10;
+int lsb = num % 10;
+msb == lsb ? printf("1") : printf("0");
+return 0;
+}
+
+text
+---
+
+
+## Assignment 13: Check Equality of 4,3 Digits with 2,1 Digits in 4-Digit Number  
+### Problem Statement  
+Get a 4-digit number from the user and print `1` if the number formed by the 4th and 3rd digits is equal to the number formed by the 2nd and 1st digits, otherwise print `0`.  
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt user to enter a 4-digit number.  
+4. Read number using `scanf` with `%d`.  
+5. Print the entered number.  
+6. Extract the 4th digit (`b4`) by dividing by 1000.  
+7. Extract the 3rd digit (`b3`) by taking the remainder after dividing by 1000, then dividing by 100.  
+8. Extract the 2nd digit (`b2`) by taking the remainder after dividing by 100, then dividing by 10.  
+9. Extract the 1st digit (`b1`) by taking the remainder after dividing by 10.  
+10. Form two numbers: one from 4th and 3rd digits (`b4*10 + b3`), one from 2nd and 1st digits (`b2*10 + b1`).  
+11. Use the ternary operator to check if the two numbers are equal:  
+    - Print `1` if they are equal.  
+    - Print `0` if not.  
+12. End the program.  
+### Code  
+#include<stdio.h>
+int main(){
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("your entered number is %d \n", num);
+int b4 = num / 1000;
+int b3 = (num % 1000) / 100;
+int b2 = ((num % 100) / 10);
+int b1 = num % 10;
+(b4 * 10 + b3) == (b2 * 10 + b1) ? printf("1") : printf("0");
+return 0;
+}
+
+text
+---
+
+## Assignment 14: Check if 4-Digit Number is Greater Than or Equal to 50  
+### Problem Statement  
+Get a 4-digit number from the user and print `"success"` if the number is greater than or equal to 50, otherwise print `"failure"`.  
+### Solution Approach  
+1. Start the program.  
+2. Declare an integer variable to store the input number.  
+3. Prompt the user to enter a 4-digit number.  
+4. Read the number using `scanf` with `%d`.  
+5. Print the entered number.  
+6. Use the ternary operator to check if the number is greater than or equal to 50:  
+   - If true, print `"success"`.  
+   - If false, print `"failure"`.  
+7. End the program.  
+### Code  
+#include<stdio.h>
+int main(){
+int num;
+printf("enter a number: ");
+scanf("%d", &num);
+printf("your entered number is %d \n",num);
+int b4 = num / 1000;
+int b3 = (num % 1000) / 100;
+int b2 = ((num % 1000) % 100) / 10;
+int b1 = ((num % 1000) % 100) % 10;
+num >= 50 ? printf("success") : printf("failure");
+return 0;
+}
+
+text
+---
+
+## Assignment 2 (Loops): Print Numbers from N down to 1 using goto Loop  
+### Problem Statement  
+Take a number `N` from the user and print numbers from `N` down to 1 using a loop structure.  
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variable `num` for input.  
+3. Prompt user to enter the number `N`.  
+4. Read number using `scanf`.  
+5. Use a label `loop` and a conditional check `if(i < num)` to control looping.  
+6. Inside the loop, print the current value of `num`.  
+7. Decrement `num` by 1 (`num--`).  
+8. Use `goto loop` to repeat steps until `num` reaches 0.  
+9. End the program when loop exits.  
+### Code  
+#include<stdio.h>
+int main(){
+int num;
+int i = 0;
+printf("enter a number: ");
+scanf("%d", &num);
+loop : if(i < num){
+printf("%d \n", num);
+num--;
+goto loop;
+}
+return 0;
+}
+
+text
+---
+## Assignment 1 (Loops): Print Numbers from 1 to N using goto Loop  
+### Problem Statement  
+Take a number `N` from the user and print numbers from 1 up to `N` using a loop structure.  
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables `num` for input number and `i` for counting.  
+3. Prompt user to enter the number `N`.  
+4. Read number using `scanf`.  
+5. Initialize `i` to 0.  
+6. Use a label `loop` and a conditional check `if(i < num)` to continue looping.  
+7. Increment `i`, print the value of `i`.  
+8. Use `goto loop;` to repeat step 6 until the condition is false.  
+9. End the program when the loop exits.  
+### Code  
+#include<stdio.h>
+int main(){
+int num;
+int i = 0;
+printf("enter a number: ");
+scanf("%d", &num);
+loop : if( i < num ){
+i++;
+printf("%d", i);
+
+text
+    goto loop;
+}
+return 0;
+}
+
+
+
+## Assignment 1 (Loops): Sum Numbers from 0 to N Using For Loop  
+### Problem Statement  
+Calculate the sum of all integers from 0 up to a given number `N` using a `for` loop.  
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables `num` for input, `i` for iteration, and `sum` to store the cumulative sum.  
+3. Initialize `sum` to 0.  
+4. Prompt user to enter the number `N` (in this sample code, hardcoded to 5).  
+5. Use a `for` loop starting from `i = 0` to `i <= num`:  
+   - Add the value of `i` to `sum` in each iteration.  
+6. After loop completes, print the value of `sum`.  
+7. End the program.  
+### Code  
+#include<stdio.h>
+int main(){
+int num = 5;
+int i, sum = 0;
+
+text
+for(i = 0; i <= num; i++){
+    sum += i;
+}
+printf("%d", sum);
+return 0;
+}
+
+text
+---
+
+## Assignment 9: Count and Sum Digits of a Number  
+### Problem Statement  
+Take a number (including large and negative numbers) from the user, count how many digits it has, calculate the sum of its digits, and print both results.  
+### Solution Approach  
+1. Start the program.  
+2. Declare `long long` variables `num` and `temp` to support large numbers.  
+3. Declare integer variables `count` for digit count, `sum` for sum of digits, and `digit` for individual digit extraction.  
+4. Prompt the user to enter a number and read it using `scanf`.  
+5. Handle the special case where the number is 0 (digits = 1, sum = 0).  
+6. If the number is negative, convert to positive for processing.  
+7. Copy the number to a temporary variable `temp`.  
+8. Use a `while` loop on `temp` to count digits by dividing by 10 repeatedly and incrementing `count`.  
+9. Reset `temp` to the original number.  
+10. Use another `while` loop to sum the digits by extracting the last digit (`temp % 10`), adding it to `sum`, and updating `temp` by dividing by 10.  
+11. Print the total number of digits and the sum of digits.  
+12. End the program.  
+### Code  
+#include <stdio.h>
+int main() {
+long long num, temp; // use long long for large numbers
+int count = 0, sum = 0, digit;
+// Take input from user
+printf("Enter a number: ");
+scanf("%lld", &num);
+// Special case: if number is 0
+if (num == 0) {
+printf("Number of digits = 1\nSum of digits = 0\n");
+return 0; // program ends here
+}
+// If number is negative, make it positive
+if (num < 0) {
+num = -num;
+}
+// Make a copy of number to use separately
+temp = num;
+// Count digits
+while (temp != 0) {
+temp = temp / 10; // remove last digit
+count++; // increment count
+}
+// Reset temp to original number for summing digits
+temp = num;
+// Calculate sum of digits
+while (temp > 0) {
+digit = temp % 10; // get last digit
+sum = sum + digit; // add digit to sum
+temp = temp / 10; // remove last digit
+}
+// Print results
+printf("Number of digits = %d\n", count);
+printf("Sum of digits = %d\n", sum);
+return 0;
+}
+
+## Assignment 1: Print Numbers from 1 to N using goto Loop  
+### Problem Statement  
+Take a number `N` from the user and print numbers from 1 up to `N` using a loop structure.  
+### Code  
+#include<stdio.h>
+int main(){
+int num;
+int i = 0;
+printf("enter a number: ");
+scanf("%d", &num);
+loop : if( i < num ){
+i++;
+printf("%d", i);
+goto loop;
+}
+return 0;
+}
+
+text
+
+---
+
+## Program: Reverse a Number  
+### Problem Statement  
+Take a number from the user and print its reverse.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables to store the input number, a variable to hold the reversed number initialized to 0, and a temporary variable.  
+3. Prompt the user to enter a number.  
+4. Read the number using `scanf`.  
+5. Use a loop to reverse the number:  
+   - Extract the last digit using modulo 10.  
+   - Add the digit to the reversed number after multiplying the current reversed number by 10.  
+   - Remove the last digit from the original number by dividing by 10.  
+6. Repeat until the original number becomes 0.  
+7. Print the reversed number.  
+8. End the program.
+
+### Code  
+#include <stdio.h>
+int main() {
+int num, reversed = 0, digit;
+printf("Enter a number: ");
+scanf("%d", &num);
+int temp = num;
+
+text
+while (temp != 0) {
+    digit = temp % 10;              // Extract last digit
+    reversed = reversed * 10 + digit; // Append digit
+    temp = temp / 10;               // Remove last digit
+}
+
+printf("Reversed number: %d\n", reversed);
+return 0;
+}
+
+text
+---
+
+## Program: Interchange First and Last Digits of a Number  
+### Problem Statement  
+Take a number from the user and interchange its first and last digits, then print the resulting number.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables to store the input number, digits, the number of digits count, and the result.  
+3. Prompt the user to enter a number.  
+4. Read the number using `scanf`.  
+5. Find the first digit by repeatedly dividing the number by 10 until the number is less than 10.  
+6. Find the last digit using modulo 10.  
+7. Calculate the number of digits by dividing the number repeatedly by 10 and counting.  
+8. Compute the new number by:  
+   - Replacing the first digit with the last digit multiplied by 10^(digits-1).  
+   - Replacing the last digit with the first digit.  
+   - Keeping the middle digits the same.  
+9. Print the number after swapping first and last digits.  
+10. End the program.
+
+### Code  
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+int num, firstDigit, lastDigit, digits = 0, temp, result;
+printf("Enter a number: ");
+scanf("%d", &num);
+
+text
+temp = num;
+lastDigit = temp % 10;
+
+// Count digits
+while (temp > 0) {
+    temp = temp / 10;
+    digits++;
+}
+
+int power = (int)pow(10, digits - 1);
+firstDigit = num / power;
+
+// Remove first and last digit from number
+int middle = (num % power) / 10;
+
+// Calculate result after swapping first and last digit
+result = lastDigit * power + middle * 10 + firstDigit;
+
+printf("Number after swapping first and last digits: %d\n", result);
+return 0;
+}
+
+text
+---
+
+## Program: Print 2-Digit Odd Numbers Whose Digits Sum to 7  
+### Problem Statement  
+Print all two-digit odd numbers such that the sum of their digits equals 7.
+
+### Solution Approach  
+1. Start the program.  
+2. Use a `for` loop from 10 to 99 (all two-digit numbers).  
+3. In each iteration, check if the number is odd (`i % 2 != 0`).  
+4. Split the number into its tens place (MSB) and units place (LSB) using division and modulo operations.  
+5. Check if the sum of MSB and LSB equals 7.  
+6. If both conditions satisfy, print the number.  
+7. Repeat for all numbers in the range.
+
+### Code  
+#include <stdio.h>
+int main()
+{
+int i, msb, lsb;
+
+text
+for(i = 10; i <= 99; i++){
+    if(i % 2 != 0){          // Check if odd
+        msb = i / 10;        // Tens digit
+        lsb = i % 10;        // Units digit
+        if(msb + lsb == 7){  // Check sum
+            printf("%d\n", i);
+        }
+    }
+}
+return 0;
+}
+
+text
+---
+
+
+## Program: Print 2-Digit Even Numbers Whose Digits Sum to 6  
+### Problem Statement  
+Print all two-digit even numbers such that the sum of their digits equals 6.
+
+### Solution Approach  
+1. Start the program.  
+2. Use a `for` loop from 10 to 99, covering all two-digit numbers.  
+3. For each number, obtain the tens (`msb`) and units (`lsb`) digits using division and modulo.  
+4. Use `i++` inside the loop to effectively check only even numbers.  
+5. If the sum of `msb` and `lsb` equals 6, print the number.  
+6. Continue until all numbers are processed.
+
+### Code  
+#include <stdio.h>
+int main()
+{
+int i, num, msb, lsb;
+for(i = 10 ; i <= 99 ; i++){
+num = i;
+msb = num / 10;
+lsb = num % 10;
+if(msb + lsb == 6){
+printf("%d \n", i);
+}
+i++; // Skip odd numbers (check only even)
+}
+return 0;
+}
+
+text
+---
+
+## Program: Print the Most Significant Digit (MSB) of a Number  
+### Problem Statement  
+Write a program to take a number from the user and print its most significant (first) digit.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables for input (`num`) and result (`res`).  
+3. Prompt the user to enter a number and read it using `scanf`.  
+4. Repeat the following in a loop as long as `num` is not 0:  
+   - Assign the current value of `num` to `res`.  
+   - Divide `num` by 10 to remove the last digit.  
+5. When the loop exits, `res` holds the most significant digit (since it's the last value before `num` became 0).  
+6. Print the value of `res`.  
+7. End the program.
+
+### Code  
+#include <stdio.h>
+int main()
+{
+int num, res;
+printf("ENTER A NUMBER: ");
+scanf("%d", &num);
+while(num != 0){
+res = num;
+num = num / 10;
+}
+printf("%d", res); // Prints the MSB
+return 0;
+}
+
+text
+---
+
+## Program: Check if a Number is Prime  
+### Problem Statement  
+Write a program to take a number from the user and check whether it is a prime number or not.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables for the input number (`num`), loop counter (`i`), and a flag variable (`isPrime`), initialized to 1 (prime).  
+3. Prompt the user to enter a number and read it using `scanf`.  
+4. If the number is less than or equal to 1, mark it as not prime (`isPrime = 0`).  
+5. Otherwise, check divisibility from 2 up to the square root of the number:  
+    - If the number is divisible by any `i`, mark it as not prime (`isPrime = 0`) and break the loop.  
+6. After checking, print the result:  
+    - If `isPrime` is still 1, the number is prime.  
+    - Otherwise, the number is not prime.  
+7. End the program.
+
+### Code  
+#include <stdio.h>
+#include <math.h>
+int main() {
+int num, i, isPrime = 1;
+printf("ENTER A NUMBER: ");
+scanf("%d", &num);
+if (num <= 1) {
+isPrime = 0;
+} else {
+for (i = 2; i <= sqrt(num); i++) {
+if (num % i == 0) {
+isPrime = 0;
+break;
+}
+}
+}
+if (isPrime)
+printf("The given number %d is a prime number\n", num);
+else
+printf("The given number %d is not a prime number\n", num);
+return 0;
+}
+
+text
+---
+
+## Program: Find the Sum of Digits and Check for Prime  
+### Problem Statement  
+Write a program to take a number from the user, calculate the sum of its digits, and check whether the number is prime.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables for input (`num`), a temporary copy (`temp`), digit extraction (`digit`), sum of digits (`sum`), loop counter (`i`), and a flag for primality (`isPrime`), which is set to 1 at the start.  
+3. Prompt the user to enter a number and read input using `scanf`.  
+4. **Sum of digits:**  
+   - Copy `num` to `temp`.  
+   - Use a while loop to extract each digit using `temp % 10`, add to `sum`, then reduce `temp` using `temp / 10` until `temp` becomes 0.  
+   - Print the sum of digits.  
+5. **Prime check:**  
+   - If the entered number is less than or equal to 1, mark `isPrime = 0`.  
+   - Else, check divisibility from 2 up to the square root of the number; if divisible, set `isPrime = 0` and break.  
+   - After the loop, if `isPrime` is still 1, print that the number is prime; otherwise, print not prime.  
+6. End the program.
+
+### Code  
+#include <stdio.h>
+#include <math.h>
+int main() {
+int num, temp, sum = 0, digit, i, isPrime = 1;
+printf("ENTER A NUMBER: ");
+scanf("%d", &num);
+
+text
+// -------- SUM OF DIGITS --------
+temp = num;
+while (temp > 0) {
+    digit = temp % 10;
+    sum = sum + digit;
+    temp = temp / 10;
+}
+printf("Sum of digits = %d\n", sum);
+
+// -------- PRIME CHECK --------
+if (num <= 1) {
+    isPrime = 0; 
+} else {
+    for (i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0) {
+            isPrime = 0; 
+            break;
+        }
+    }
+}
+if (isPrime)
+    printf("The given number %d is a prime number\n", num);
+else
+    printf("The given number %d is not a prime number\n", num);
+
+return 0;
+}
+
+text
+---
+
+## Program: Count Odd Digits in a Number  
+### Problem Statement  
+Get a number from the user and print how many odd digits are present in it.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables for input (`num`), remainder when dividing by 10 (`rem`), and an odd digit counter (`count`), initialized to 0.  
+3. Prompt the user to enter a number using `scanf`.  
+4. Use a `while` loop to process each digit:
+    - Find the last digit using `num % 10` and assign it to `rem`.
+    - If `rem` is odd (`rem % 2 != 0`), increment the `count`.
+    - Remove the last digit using `num = num / 10`.
+5. Continue until all digits have been processed (`num` becomes 0).
+6. Print the total count of odd digits.
+7. End the program.
+
+### Code  
+#include<stdio.h>
+int main(){
+int num, count = 0;
+
+text
+printf("enter a number: ");
+scanf("%d", &num);
+
+while(num != 0){
+    int rem = num % 10;
+    if(rem % 2 != 0){
+        count++;
+    }
+    num = num / 10;
+}
+printf("%d", count);
+return 0;
+}
+
+text
+---
+
+
+## Program: Count 2-Digit Odd Numbers in a Given Number  
+### Problem Statement  
+Get a number from the user and print how many **2-digit odd numbers** can be formed by moving a window of 2 consecutive digits from right to left.
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables for input (`num`), remainder for the last two digits (`rem`), and a counter (`count`) initialized to 0.  
+3. Prompt the user to enter a number and read it using `scanf`.  
+4. Use a `while` loop to process the number as long as it has at least 2 digits (`num >= 10`):
+    - Take the last two digits using `num % 100` and store in `rem`.  
+    - If `rem` is a 2-digit number (i.e., greater than or equal to 10), and it is odd (`rem % 2 != 0`), increment `count`.  
+    - Remove the last digit using `num = num / 10` to slide the window one digit to the left.  
+5. When the loop finishes, print the total count of 2-digit odd numbers.  
+6. End the program.
+
+### Code  
+#include<stdio.h>
+int main(){
+int num, count = 0;
+
+text
+printf("enter a number: ");
+scanf("%d", &num);
+
+while(num >= 10){
+    int rem = num % 100;
+    if(rem >= 10 && rem % 2 != 0){
+        count++;
+    }
+    num = num / 10;
+}
+printf("%d", count);
+return 0;
+}
+
+text
+---
+
+## Program: Count Digits in a Number Which Are Perfect Squares of a Single Digit  
+### Problem Statement  
+Get a number from the user and count how many digits in the number are perfect squares of single-digit numbers (i.e., digits 1, 4, or 9).
+
+### Solution Approach  
+1. Start the program.  
+2. Declare integer variables for input number (`num`), digit remainder (`rem`), and counter (`count`) initialized to 0.  
+3. Prompt the user to enter a number and read it using `scanf`.  
+4. Use a `while` loop to extract each digit until the number becomes zero:  
+   - Extract last digit using `num % 10`.  
+   - Check if the digit is 1, 4, or 9 (digits whose square roots are integers).  
+   - If yes, increment `count`.  
+   - Divide the number by 10 to remove the last digit.  
+5. After processing all digits, print the total count of digits that are perfect squares.  
+6. End the program.
+
+### Code  
+#include<stdio.h>
+int main(){
+int num, count = 0;
+
+text
+printf("enter a number: ");
+scanf("%d", &num);
+
+while(num != 0){
+    int rem = num % 10;
+    if(rem == 1 || rem == 4 || rem == 9){ // use || for logical OR
+        count++;
+    }
+    num = num / 10;
+}
+printf("%d", count);
+return 0;
+}
+
+text
+---
+
+
