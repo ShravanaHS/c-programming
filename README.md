@@ -1392,7 +1392,7 @@ else
 printf("The given number %d is not a prime number\n", num);
 return 0;
 }
-
+```
 ---
 
 ## Program: Find the Sum of Digits and Check for Prime  
@@ -1544,7 +1544,8 @@ Get a number from the user and count how many digits in the number are perfect s
 5. After processing all digits, print the total count of digits that are perfect squares.  
 6. End the program.
 
-### Code 
+### Code
+
 ```
 #include<stdio.h>
 int main(){
@@ -1562,8 +1563,8 @@ while(num != 0){
 printf("%d", count);
 return 0;
 }
-
 ```
+
 ---
 
 
