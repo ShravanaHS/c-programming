@@ -869,6 +869,7 @@ Take a 4-digit number from the user and print the result of reversing the two mo
 9. Print the entered number and the new number with reversed MSB digits.  
 10. End the program.  
 ### Code  
+```
 #include <stdio.h>
 int main()
 {
@@ -883,8 +884,7 @@ int rev = middlem * 1000 + msb * 100 + middlm;
 printf(" rev is : %d ", rev);
 return 0;
 }
-
-text
+```
 ---
 
 ## Assignment 12: Check if Digits of 2-Digit Number are Equal  
@@ -901,8 +901,10 @@ Take a 2-digit number from the user and print `1` if both digits are equal, othe
 8. Use the ternary operator to compare `msb` and `lsb`:  
    - Print `1` if they are equal.  
    - Print `0` if they are not equal.  
-9. End the program.  
+9. End the program.
+    
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num;
@@ -914,8 +916,7 @@ int lsb = num % 10;
 msb == lsb ? printf("1") : printf("0");
 return 0;
 }
-
-text
+```
 ---
 
 
@@ -938,6 +939,7 @@ Get a 4-digit number from the user and print `1` if the number formed by the 4th
     - Print `0` if not.  
 12. End the program.  
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num;
@@ -951,8 +953,7 @@ int b1 = num % 10;
 (b4 * 10 + b3) == (b2 * 10 + b1) ? printf("1") : printf("0");
 return 0;
 }
-
-text
+```
 ---
 
 ## Assignment 14: Check if 4-Digit Number is Greater Than or Equal to 50  
@@ -969,6 +970,7 @@ Get a 4-digit number from the user and print `"success"` if the number is greate
    - If false, print `"failure"`.  
 7. End the program.  
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num;
@@ -982,8 +984,7 @@ int b1 = ((num % 1000) % 100) % 10;
 num >= 50 ? printf("success") : printf("failure");
 return 0;
 }
-
-text
+```
 ---
 
 ## Assignment 2 (Loops): Print Numbers from N down to 1 using goto Loop  
@@ -1000,6 +1001,7 @@ Take a number `N` from the user and print numbers from `N` down to 1 using a loo
 8. Use `goto loop` to repeat steps until `num` reaches 0.  
 9. End the program when loop exits.  
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num;
@@ -1013,8 +1015,7 @@ goto loop;
 }
 return 0;
 }
-
-text
+```
 ---
 ## Assignment 1 (Loops): Print Numbers from 1 to N using goto Loop  
 ### Problem Statement  
@@ -1030,6 +1031,7 @@ Take a number `N` from the user and print numbers from 1 up to `N` using a loop 
 8. Use `goto loop;` to repeat step 6 until the condition is false.  
 9. End the program when the loop exits.  
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num;
@@ -1046,7 +1048,7 @@ text
 return 0;
 }
 
-
+```
 
 ## Assignment 1 (Loops): Sum Numbers from 0 to N Using For Loop  
 ### Problem Statement  
@@ -1061,6 +1063,7 @@ Calculate the sum of all integers from 0 up to a given number `N` using a `for` 
 6. After loop completes, print the value of `sum`.  
 7. End the program.  
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num = 5;
@@ -1073,8 +1076,7 @@ for(i = 0; i <= num; i++){
 printf("%d", sum);
 return 0;
 }
-
-text
+```
 ---
 
 ## Assignment 9: Count and Sum Digits of a Number  
@@ -1092,8 +1094,10 @@ Take a number (including large and negative numbers) from the user, count how ma
 9. Reset `temp` to the original number.  
 10. Use another `while` loop to sum the digits by extracting the last digit (`temp % 10`), adding it to `sum`, and updating `temp` by dividing by 10.  
 11. Print the total number of digits and the sum of digits.  
-12. End the program.  
+12. End the program.
+     
 ### Code  
+```
 #include <stdio.h>
 int main() {
 long long num, temp; // use long long for large numbers
@@ -1130,11 +1134,13 @@ printf("Number of digits = %d\n", count);
 printf("Sum of digits = %d\n", sum);
 return 0;
 }
-
+```
 ## Assignment 1: Print Numbers from 1 to N using goto Loop  
 ### Problem Statement  
 Take a number `N` from the user and print numbers from 1 up to `N` using a loop structure.  
-### Code  
+
+### Code 
+```
 #include<stdio.h>
 int main(){
 int num;
@@ -1148,8 +1154,7 @@ goto loop;
 }
 return 0;
 }
-
-text
+```
 
 ---
 
@@ -1171,6 +1176,7 @@ Take a number from the user and print its reverse.
 8. End the program.
 
 ### Code  
+```
 #include <stdio.h>
 int main() {
 int num, reversed = 0, digit;
@@ -1178,7 +1184,6 @@ printf("Enter a number: ");
 scanf("%d", &num);
 int temp = num;
 
-text
 while (temp != 0) {
     digit = temp % 10;              // Extract last digit
     reversed = reversed * 10 + digit; // Append digit
@@ -1188,8 +1193,7 @@ while (temp != 0) {
 printf("Reversed number: %d\n", reversed);
 return 0;
 }
-
-text
+```
 ---
 
 ## Program: Interchange First and Last Digits of a Number  
@@ -1212,6 +1216,7 @@ Take a number from the user and interchange its first and last digits, then prin
 10. End the program.
 
 ### Code  
+```
 #include <stdio.h>
 #include <math.h>
 
@@ -1242,8 +1247,7 @@ result = lastDigit * power + middle * 10 + firstDigit;
 printf("Number after swapping first and last digits: %d\n", result);
 return 0;
 }
-
-text
+```
 ---
 
 ## Program: Print 2-Digit Odd Numbers Whose Digits Sum to 7  
@@ -1259,7 +1263,8 @@ Print all two-digit odd numbers such that the sum of their digits equals 7.
 6. If both conditions satisfy, print the number.  
 7. Repeat for all numbers in the range.
 
-### Code  
+### Code 
+```
 #include <stdio.h>
 int main()
 {
@@ -1277,8 +1282,7 @@ for(i = 10; i <= 99; i++){
 }
 return 0;
 }
-
-text
+```
 ---
 
 
@@ -1294,7 +1298,8 @@ Print all two-digit even numbers such that the sum of their digits equals 6.
 5. If the sum of `msb` and `lsb` equals 6, print the number.  
 6. Continue until all numbers are processed.
 
-### Code  
+### Code 
+```
 #include <stdio.h>
 int main()
 {
@@ -1310,8 +1315,7 @@ i++; // Skip odd numbers (check only even)
 }
 return 0;
 }
-
-text
+```
 ---
 
 ## Program: Print the Most Significant Digit (MSB) of a Number  
@@ -1330,6 +1334,7 @@ Write a program to take a number from the user and print its most significant (f
 7. End the program.
 
 ### Code  
+```
 #include <stdio.h>
 int main()
 {
@@ -1343,8 +1348,7 @@ num = num / 10;
 printf("%d", res); // Prints the MSB
 return 0;
 }
-
-text
+```
 ---
 
 ## Program: Check if a Number is Prime  
@@ -1364,6 +1368,8 @@ Write a program to take a number from the user and check whether it is a prime n
 7. End the program.
 
 ### Code  
+
+```
 #include <stdio.h>
 #include <math.h>
 int main() {
@@ -1387,7 +1393,6 @@ printf("The given number %d is not a prime number\n", num);
 return 0;
 }
 
-text
 ---
 
 ## Program: Find the Sum of Digits and Check for Prime  
@@ -1409,6 +1414,7 @@ Write a program to take a number from the user, calculate the sum of its digits,
 6. End the program.
 
 ### Code  
+```
 #include <stdio.h>
 #include <math.h>
 int main() {
@@ -1416,7 +1422,6 @@ int num, temp, sum = 0, digit, i, isPrime = 1;
 printf("ENTER A NUMBER: ");
 scanf("%d", &num);
 
-text
 // -------- SUM OF DIGITS --------
 temp = num;
 while (temp > 0) {
@@ -1444,8 +1449,7 @@ else
 
 return 0;
 }
-
-text
+```
 ---
 
 ## Program: Count Odd Digits in a Number  
@@ -1464,12 +1468,11 @@ Get a number from the user and print how many odd digits are present in it.
 6. Print the total count of odd digits.
 7. End the program.
 
-### Code  
+### Code 
+```
 #include<stdio.h>
 int main(){
 int num, count = 0;
-
-text
 printf("enter a number: ");
 scanf("%d", &num);
 
@@ -1483,8 +1486,7 @@ while(num != 0){
 printf("%d", count);
 return 0;
 }
-
-text
+```
 ---
 
 
@@ -1504,6 +1506,7 @@ Get a number from the user and print how many **2-digit odd numbers** can be for
 6. End the program.
 
 ### Code  
+```
 #include<stdio.h>
 int main(){
 int num, count = 0;
@@ -1522,8 +1525,7 @@ while(num >= 10){
 printf("%d", count);
 return 0;
 }
-
-text
+```
 ---
 
 ## Program: Count Digits in a Number Which Are Perfect Squares of a Single Digit  
@@ -1542,12 +1544,11 @@ Get a number from the user and count how many digits in the number are perfect s
 5. After processing all digits, print the total count of digits that are perfect squares.  
 6. End the program.
 
-### Code  
+### Code 
+```
 #include<stdio.h>
 int main(){
 int num, count = 0;
-
-text
 printf("enter a number: ");
 scanf("%d", &num);
 
@@ -1562,7 +1563,7 @@ printf("%d", count);
 return 0;
 }
 
-text
+```
 ---
 
 
